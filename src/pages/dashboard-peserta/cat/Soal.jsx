@@ -301,15 +301,7 @@ const Soal = () => {
             sumJawabanSalah += num;
         })
         // console.log('propsData 2', propsData)
-        const data = {
-            'username': storedUser.name,
-            'nama_tes': propsData[1].nama_tes_cat,
-            'tanggal': propsData[0].tanggal,
-            'kelolasesi_id': propsData[0].id,
-            'jawaban_benar': sumJawabanBenar,
-            'jawaban_salah': sumJawabanSalah,
-            'nilai': 0
-        }
+        
         Swal.fire({
             title: name === 'done' ? 'Apakah sudah yakin?' : 'Waktu pengerjaan telah berakhir',
             text:
@@ -325,6 +317,16 @@ const Soal = () => {
             allowOutsideClick: name === 'done' ? true : false
         }).then(async result => {
             if (result.value) {
+                const data = {
+                    'username': storedUser.name,
+                    'nama_tes': propsData[1].nama_tes_cat,
+                    'tanggal': propsData[0].tanggal,
+                    'kelolasesi_id': propsData[0].id,
+                    'jawaban_benar': sumJawabanBenar,
+                    'jawaban_salah': sumJawabanSalah,
+                    'nilai': 0
+                }
+                console.log('data', data);
                 const response = await createData({ path: '/input-tes', post: data });
                 console.log('response upload nilai', response);
                 if (response.error) {
@@ -340,16 +342,14 @@ const Soal = () => {
                 }
 
 
-                differenceTime(storedUser.name,
-
-                );
+                differenceTime(storedUser.name);
             } else {
                 dispatch(prevNomorSoal(1));
             }
         });
     }
 
-    const differenceTime = (user, sum) => {
+    const differenceTime = (user) => {
         let date = new Date();
         let year = date.getFullYear();
         let month = date.getMonth();
@@ -426,7 +426,7 @@ const Soal = () => {
             'tanggal': propsData[0].tanggal,
             'waktu': timeH + ":" + timeM + ":" + timeS,
             'sesi': propsData[0].value,
-            'nilai': sum
+            'nilai': 0
         }
         // console.log('data', props)
         navigate('/hasil-tes-peserta', {
