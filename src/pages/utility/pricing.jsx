@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Card from "../../components/ui/Card";
-import Button from "../../components/ui/Button";
+import Card from "@/components/ui/Card";
+import Button from "@/components/ui/Button";
 
 // import images
-import img1 from "../../assets/images/all-img/big-shap1.png";
-import img2 from "../../assets/images/all-img/big-shap2.png";
-import img3 from "../../assets/images/all-img/big-shap3.png";
-import img4 from "../../assets/images/all-img/big-shap4.png";
+import img1 from "@/assets/images/all-img/big-shap1.png";
+import img2 from "@/assets/images/all-img/big-shap2.png";
+import img3 from "@/assets/images/all-img/big-shap3.png";
+import img4 from "@/assets/images/all-img/big-shap4.png";
 
 const tables = [
   {

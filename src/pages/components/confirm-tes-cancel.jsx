@@ -1,8 +1,4 @@
-import axios from 'axios';
 import Swal from "sweetalert2";
-import baseurl from '../../constant/baseurl';
-import { getTokenFromLocalStorage } from "../../store/localStorage";
-import { useCreateDataMutation } from "../../store/api/app/appSlice";
 
 export const confirmTesCancel = () => {
    Swal.fire({

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import Accordion from "../../components/ui/Accordion";
-import Card from "../../components/ui/Card";
-import Icon from "../../components/ui/Icon";
+import Accordion from "@/components/ui/Accordion";
+import Card from "@/components/ui/Card";
+import Icon from "@/components/ui/Icon";
 import { Tab } from "@headlessui/react";
 
 const faqmenus = [

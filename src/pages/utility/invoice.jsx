@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from "react";
-import { advancedTable } from "../../constant/table-data";
-import Card from "../../components/ui/Card";
-import Icon from "../../components/ui/Icon";
-import Dropdown from "../../components/ui/Dropdown";
-import Button from "../../components/ui/Button";
+import { advancedTable } from "@/constant/table-data";
+import Card from "@/components/ui/Card";
+import Icon from "@/components/ui/Icon";
+import Dropdown from "@/components/ui/Dropdown";
+import Button from "@/components/ui/Button";
 
 import { useNavigate } from "react-router-dom";
 import {

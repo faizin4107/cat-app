@@ -1,14 +1,12 @@
 import React from "react";
-import Dropdown from "../../../../components/ui/Dropdown";
-import Icon from "../../../../components/ui/Icon";
-import { Menu, Transition } from "@headlessui/react";
+import Dropdown from "@/components/ui/Dropdown";
+import Icon from "@/components/ui/Icon";
+import { Menu } from "@headlessui/react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { useLogoutMutation } from "../../../../store/api/auth/authApiSlice";
-import { logOut } from "../../../../store/api/auth/authSlice";
+import { useDispatch } from "react-redux";
+import { useLogoutMutation } from "@/store/api/auth/authApiSlice";
+import { logOut } from "@/store/api/auth/authSlice";
 import { toast } from "react-toastify";
-
-import UserAvatar from "../../../../assets/images/all-img/user.png";
 
 const profileLabel = (name) => {
   
@@ -53,14 +51,12 @@ const Profile = () => {
       }
       const response = await logout(data, userData.accessToken);
       if (response.error) {
-        console.log('1');
         if(response.error.data.message != 'Session expired'){
           toast.error(response.error.data.message);
           return;
         }
         
       }
-      // localStorage.removeItem("user");
       dispatch(logOut());
       
       

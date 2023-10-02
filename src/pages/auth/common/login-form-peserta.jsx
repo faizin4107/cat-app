@@ -1,14 +1,13 @@
 import React from "react";
-import Textinput from "../../../components/ui/Textinput";
+import Textinput from "@/components/ui/Textinput";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
-import Button from "../../../components/ui/Button";
-// import { Link } from "react-router-dom";
+import Button from "@/components/ui/Button";
 import { useDispatch } from "react-redux";
-import { useLoginMutation } from "../../../store/api/auth/authApiSlice";
-import { setUser } from "../../../store/api/auth/authSlice";
+import { useLoginMutation } from "@/store/api/auth/authApiSlice";
+import { setUser } from "@/store/api/auth/authSlice";
 import { toast } from "react-toastify";
 const schema = yup
   .object({

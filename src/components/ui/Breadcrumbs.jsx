@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, NavLink } from "react-router-dom";
-import { menuItemsAdmin, menuItemsPeserta } from "../../constant/data";
+import { menuItemsAdmin, menuItemsPeserta } from "@/constant/data";
 import Icon from "../ui/Icon";
 
 const Breadcrumbs = () => {
@@ -18,12 +18,9 @@ const Breadcrumbs = () => {
         const currentMenuItem = menuItemsAdmin.find(
           (item) => item.link === locationName
         );
-        console.log('currentMenuItem', currentMenuItem);
-    
         const currentChild = menuItemsAdmin.find((item) =>
           item.child?.find((child) => child.childlink === locationName)
         );
-        console.log('currentChild', currentChild);
         
     
         if (currentMenuItem) {
@@ -41,12 +38,10 @@ const Breadcrumbs = () => {
         const currentMenuItem = menuItemsPeserta.find(
           (item) => item.link === locationName
         );
-        console.log('currentMenuItem', currentMenuItem);
     
         const currentChild = menuItemsPeserta.find((item) =>
           item.child?.find((child) => child.childlink === locationName)
         );
-        console.log('currentChild', currentChild);
         
     
         if (currentMenuItem) {

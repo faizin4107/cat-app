@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { handleSidebarCollapsed } from "../store/layout";
+import { handleSidebarCollapsed } from "@/store/layout";
 
 const useSidebar = () => {
   const dispatch = useDispatch();

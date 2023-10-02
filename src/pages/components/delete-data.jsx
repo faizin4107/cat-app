@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Swal from "sweetalert2";
-import baseurl from '../../constant/baseurl';
-import { getTokenFromLocalStorage } from "../../store/localStorage";
+import baseurl from '@/constant/baseurl';
+import { getTokenFromLocalStorage } from "@/store/localStorage";
 
 
 export const handleDelete = (id, path) => {

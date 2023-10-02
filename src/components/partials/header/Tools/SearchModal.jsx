@@ -1,6 +1,6 @@
 import { Dialog, Transition, Combobox } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import Icon from "../../../../components/ui/Icon";
+import Icon from "@/components/ui/Icon";
 const SearchModal = () => {
   let [isOpen, setIsOpen] = useState(false);
 

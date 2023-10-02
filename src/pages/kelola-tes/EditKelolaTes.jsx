@@ -1,42 +1,23 @@
 import React from "react";
 import axios from 'axios';
-import Textinput from "../../components/ui/Textinput";
-import Fileinput from "../../components/ui/Fileinput";
-import { useForm } from "react-hook-form";
-import { getTokenFromLocalStorage } from "../../store/localStorage"
-// import Icon from "../../ui/Icon";
+import Fileinput from "@/components/ui/Fileinput";
+import { getTokenFromLocalStorage } from "@/store/localStorage";
 import Select from "react-select";
-import Icon from "../../components/ui/Icon";
 import { useNavigate, useLocation } from "react-router-dom";
-import { yupResolver } from "@hookform/resolvers/yup";
-import Card from "../../components/ui/Card";
-import * as yup from "yup";
+import Card from "@/components/ui/Card";
 import Breadcrumbschild from "../../components/ui/Breadcrumbschild";
-// import { useEditKelolaTestMutation } from "../../store/api/app/kelolaTestSlice";
 import { useState } from "react";
 import { useEffect } from "react";
 import ValidateFile from "../utility/ValidateFile";
 import { toast } from "react-toastify";
-import baseurl from "../../constant/baseurl";
-import Button from "../../components/ui/Button";
-import { useRef } from "react";
+import baseurl from "@/constant/baseurl";
+import Button from "@/components/ui/Button";
 
-// const FormValidationSchema = yup
-//     .object({
-//         nama_test_cat: yup.string().required("Nama test cat is Required")
-//     })
-//     .required();
 
 const EditKelolaTes = (props) => {
     const navigate = useNavigate();
     const location = useLocation();
     const propsData = location.state;
-    // const [kelolaTest, setKelolaTest] = useState({
-    //     namaTestCat: propsData.nama_test_cat ? propsData.nama_test_cat : '',
-    //     icon: propsData.icon ? propsData.icon : '',
-    //     status: propsData.status ? propsData.status : ''
-    //   });
-    // const { namaTestCat, icon, status } = kelolaTest;
     const [isLoading, setIsLoading] = useState(false);
     const [selectedFile, setSelectedFile] = useState(null);
     const [fileSizeOver, setFileSizeOver] = useState('');

@@ -1,12 +1,12 @@
 import React from "react";
-import Card from "../../components/ui/Card";
-import Icon from "../../components/ui/Icon";
+import Card from "@/components/ui/Card";
+import Icon from "@/components/ui/Icon";
 import TotalTable from "./TotalTable";
-import userDarkMode from "../../hooks/useDarkMode";
+import userDarkMode from "@/hooks/useDarkMode";
 
 // import images
-import MainLogo from "../../assets/images/logo/logo.svg";
-import LogoWhite from "../../assets/images/logo/logo-white.svg";
+import MainLogo from "@/assets/images/logo/logo.svg";
+import LogoWhite from "@/assets/images/logo/logo-white.svg";
 
 const InvoicePreviewPage = () => {
   const printPage = () => {

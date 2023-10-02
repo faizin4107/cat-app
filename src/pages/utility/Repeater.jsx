@@ -1,7 +1,7 @@
 import React from "react";
-import Textinput from "../../components/ui/Textinput";
-import Icon from "../../components/ui/Icon";
-import Button from "../../components/ui/Button";
+import Textinput from "@/components/ui/Textinput";
+import Icon from "@/components/ui/Icon";
+import Button from "@/components/ui/Button";
 import { useForm, useFieldArray } from "react-hook-form";
 
 const Repeater = () => {

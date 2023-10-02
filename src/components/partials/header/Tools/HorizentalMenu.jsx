@@ -1,6 +1,6 @@
 import React from "react";
-import { topMenu } from "../../../../constant/data";
-import Icon from "../../../../components/ui/Icon";
+import { topMenu } from "@/constant/data";
+import Icon from "@/components/ui/Icon";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 

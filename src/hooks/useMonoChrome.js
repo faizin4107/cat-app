@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { handleMonoChrome } from "../store/layout";
+import { handleMonoChrome } from "@/store/layout";
 
 const useMonoChrome = () => {
   const dispatch = useDispatch();

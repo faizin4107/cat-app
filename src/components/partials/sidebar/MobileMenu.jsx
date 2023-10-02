@@ -1,19 +1,19 @@
 import React, { useRef, useEffect, useState } from "react";
 
 import Navmenu from "./Navmenu";
-import { menuItemsAdmin, menuItemsPeserta } from "../../../constant/data";
+import { menuItemsAdmin, menuItemsPeserta } from "@/constant/data";
 
 import SimpleBar from "simplebar-react";
-import useSemiDark from "../../../hooks/useSemiDark";
-import useSkin from "../../../hooks/useSkin";
-import useDarkMode from "../../../hooks/useDarkMode";
+import useSemiDark from "@/hooks/useSemiDark";
+import useSkin from "@/hooks/useSkin";
+import useDarkMode from "@/hooks/useDarkMode";
 import { Link } from "react-router-dom";
-import useMobileMenu from "../../../hooks/useMobileMenu";
+import useMobileMenu from "@/hooks/useMobileMenu";
 import Icon from "../../ui/Icon";
 
 // import images
-import MobileLogo from "../../../assets/images/logo-bcp.jpeg";
-import MobileLogoWhite from "../../../assets/images/logo-bcp.jpeg";
+import MobileLogo from "@/assets/images/logo-bcp.jpeg";
+import MobileLogoWhite from "@/assets/images/logo-bcp.jpeg";
 
 const MobileMenu = ({ className = "custom-class" }) => {
   const scrollableNodeRef = useRef();

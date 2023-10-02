@@ -1,7 +1,6 @@
 
 import { useSelector, useDispatch } from "react-redux";
-import { handleMobileMenu } from "../store/layout";
-// import { useLocation } from "react-router-dom";
+import { handleMobileMenu } from "@/store/layout";
 
 const useMobileMenu = () => {
   const dispatch = useDispatch();

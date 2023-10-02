@@ -1,14 +1,6 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import LoginFormPeserta from "./common/login-form-peserta";
-// import Social from "./common/social";
-// import { ToastContainer } from "react-toastify";
-// import useDarkMode from "../../hooks/useDarkMode";
-// image import
-// import LogoWhite from "../../assets/images/logo/logo-white.svg";
-// import Logo from "../../assets/images/logo/logo.svg";
-import LogoBcp from "../../assets/images/logo-bg.jpeg";
-// import bgImage from "../../assets/images/all-img/login-bg.png";
+import LogoBcp from "@/assets/images/logo-bg.jpeg";
 
 const loginPeserta = () => {
   // const [isDark] = useDarkMode();

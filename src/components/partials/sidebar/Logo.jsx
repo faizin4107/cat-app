@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import useDarkMode from "../../../hooks/useDarkMode";
-import useSidebar from "../../../hooks/useSidebar";
-import useSemiDark from "../../../hooks/useSemiDark";
-import useSkin from "../../../hooks/useSkin";
-
-// import images
-// import MobileLogo from "../../../assets/images/logo/logo-c.svg";
-// import MobileLogoWhite from "../../../assets/images/logo/logo-c-white.svg";
-import MobileLogo from "../../../assets/images/logo-bcp.jpeg";
-import MobileLogoWhite from "../../../assets/images/logo-bcp.jpeg";
+import useDarkMode from "@/hooks/useDarkMode";
+import useSidebar from "@/hooks/useSidebar";
+import useSemiDark from "@/hooks/useSemiDark";
+import useSkin from "@/hooks/useSkin";
+import MobileLogo from "@/assets/images/logo-bcp.jpeg";
+import MobileLogoWhite from "@/assets/images/logo-bcp.jpeg";
 
 const SidebarLogo = ({ menuHover }) => {
   const [isDark] = useDarkMode();

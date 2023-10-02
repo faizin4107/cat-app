@@ -1,13 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FormOtpAdmin from "./common/form-otp-admin";
-// import Social from "./common/social";
-// import useDarkMode from "../../hooks/useDarkMode";
-
-// image import
-// import LogoWhite from "../../assets/images/logo/logo-white.svg";
-// import Logo from "../../assets/images/logo/logo.svg";
-import Illustration from "../../assets/images/logo-bg.jpeg";
+import Illustration from "@/assets/images/logo-bg.jpeg";
 
 const otpAdmin = () => {
     // const [isDark] = useDarkMode();

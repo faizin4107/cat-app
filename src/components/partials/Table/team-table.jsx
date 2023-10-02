@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { teamData } from "../../../constant/table-data";
+import { teamData } from "@/constant/table-data";
 
 import Icon from "@/components/ui/Icon";
 import Dropdown from "@/components/ui/Dropdown";

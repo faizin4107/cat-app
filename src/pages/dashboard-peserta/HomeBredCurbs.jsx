@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-// import Icon from "@/components/ui/Icon";
-// import dayjs from "dayjs";
-// import Datepicker from "react-tailwindcss-datepicker";
 const HomeBredCurbs = ({ title }) => {
   return (
     <div className="flex justify-center content-center flex-wrap items-center mb-12 mt-2">

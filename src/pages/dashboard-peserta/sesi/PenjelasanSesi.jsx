@@ -1,36 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../../components/ui/Card";
-// import Card from "@/components/ui/Card";
-// import Icon from "../../../components/ui/Icon";
-// import ImageBlock1 from "../../components/partials/widget/block/image-block-1";
-// import SelectMonth from "../../components/partials/SelectMonth";
-// import CompanyTable from "../../components/partials/Table/company-table";
-// import RecentActivity from "../../components/partials/widget/recent-activity";
-// import MostSales from "../../components/partials/widget/most-sales";
+import Card from "@/components/ui/Card";
 import HomeBredCurbs from "../HomeBredCurbs";
-import Breadcrumbschild from "../../../components/ui/Breadcrumbschild";
-import clsx from "clsx";
+import Breadcrumbschild from "@/components/ui/Breadcrumbschild";
 import { useDispatch, useSelector } from "react-redux";
-// import ImageBlock2 from "../../components/partials/widget/block/image-block-2";
-// import React from "react";
-// import Card from "@/components/ui/Card";
-import Button from "../../../components/ui/Button";
-// import Icon from "@/components/ui/Icon";
-import Icon from "../../../components/ui/Icon";
-// import Icon from "@/components/ui/Icon";
-
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-// import images
-import cardImage6 from "../../../assets/images/all-img/card-6.png";
-// import StepBox from "@/components/partials/ecommerce/steps/step-box";
-// import StepBox from "../../../components/partials/ecommerce/steps/step-box";
-// import { useGetDataMutation } from "../../../store/api/app/appSlice";
-import { useGetDataMutation } from "../../../store/api/app/appSlice";
-import { addSoal, getSoal, removeListSoal } from "../../../store/api/app/soalSlice";
-// import { useNavigate } from "react-router-dom";
-import { nextNomorSoal, removeNomorSoal } from "../../../store/api/app/incrementSoal";
-import Loading from "../../../components/Loading";
+import { useGetDataMutation } from "@/store/api/app/appSlice";
+import { addSoal, getSoal, removeListSoal } from "@/store/api/app/soalSlice";
+import { nextNomorSoal, removeNomorSoal } from "@/store/api/app/incrementSoal";
+import Loading from "@/components/Loading";
 
 
 const PenjelasanSesi = () => {
@@ -39,27 +17,15 @@ const PenjelasanSesi = () => {
     const [data, setData] = useState([]);
     const [getData, { isLoading }] = useGetDataMutation();
     const [title, setTitle] = useState();
-
     const location = useLocation();
     const propsData = location.state;
-    // const titleTes = location.title;
-    // const idsesi = location.id;
-    console.log('propsData penjelasan', propsData);
-    // console.log('id',idsesi);
     useEffect(() => {
-       
-            
         setTitle('Petunjuk Pengerjaan Soal ' + propsData[0].value)
         async function fetchData() {
-            // You can await here
             const response = await getData(`/peraturan/${propsData[0].id}`);
-            console.log('response', response)
             setData(response.data.data);
-            // ...
         }
         fetchData();
-        // var options = "location=no, toolbar=no, menubar=no, scrollbars=yes, resizable=yes";
-        // window.open('http://localhost:5173/penjelasan-sesi/24','_blank',options);
         
     }, [])
     // 
@@ -98,6 +64,7 @@ const PenjelasanSesi = () => {
                 dataPilihan.push({ ...response.data.data[i], pilihan_jawaban: array })
 
             }
+            console.log('dataPilihan', dataPilihan);
             dispatch(nextNomorSoal(1));
             dispatch(addSoal(dataPilihan));
             dispatch(getSoal({ nomor: 1 }));

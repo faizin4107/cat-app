@@ -28,8 +28,6 @@ const EditTesCAT = lazy(() => import("./pages/cat/EditTesCAT"));
 const PilihanJawaban = lazy(() => import("./pages/pilihan-jawaban/PilihanJawaban"));
 const CreatePilihanJawaban = lazy(() => import("./pages/pilihan-jawaban/CreatePilihanJawaban"));
 const EditPilihanJawaban = lazy(() => import("./pages/pilihan-jawaban/EditPilihanJawaban"));
-// const CreateTesPsikologi = lazy(() => import("./pages/cat/tes-psikologi/CreateTesPsikologi"));
-// const EditTesPsikologi = lazy(() => import("./pages/cat/tes-psikologi/EditTesPsikologi"));
 const Peraturan = lazy(() => import("./pages/peraturan/Peraturan"));
 const CreatePeraturan = lazy(() => import("./pages/peraturan/CreatePeraturan"));
 const EditPeraturan = lazy(() => import("./pages/peraturan/EditPeraturan"));
@@ -52,7 +50,7 @@ const UnderConstructionPage = lazy(() =>
   import("./pages/utility/under-construction")
 );
 
-import Loading from "./components/Loading";
+import Loading from "@/components/Loading";
 
 function App() {
   return (
@@ -80,9 +78,6 @@ function App() {
           <Route path="pilihan-jawaban/:id" element={<PilihanJawaban />} />
           <Route path="create-pilihan-jawaban/:id" element={<CreatePilihanJawaban />} />
           <Route path="edit-pilihan-jawaban/:id" element={<EditPilihanJawaban />} />
-          {/* <Route path="cat-psikologi/:id" element={<TesPsikologi />} /> */}
-          {/* <Route path="create-tes-psikologi/:id" element={<CreateTesPsikologi />} /> */}
-          {/* <Route path="edit-tes-psikologi/:id" element={<EditTesPsikologi />} /> */}
           <Route path="peraturan/:id" element={<Peraturan />} />
           <Route path="create-peraturan/:id" element={<CreatePeraturan />} />
           <Route path="edit-peraturan/:id" element={<EditPeraturan />} />

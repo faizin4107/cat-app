@@ -1,25 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../components/ui/Card";
-// import Card from "@/components/ui/Card";
-import Icon from "../../components/ui/Icon";
-// import ImageBlock1 from "../../components/partials/widget/block/image-block-1";
-import SelectMonth from "../../components/partials/SelectMonth";
-import CompanyTable from "../../components/partials/Table/company-table";
-import RecentActivity from "../../components/partials/widget/recent-activity";
-import MostSales from "../../components/partials/widget/most-sales";
+import Card from "@/components/ui/Card";
 import HomeBredCurbs from "./HomeBredCurbs";
-import ImageBlock2 from "../../components/partials/widget/block/image-block-2";
-// import React from "react";
-// import Card from "@/components/ui/Card";
-import Button from "../../components/ui/Button";
-// import Icon from "@/components/ui/Icon";
 import { Link } from "react-router-dom";
-
-// import images
-import cardImage6 from "../../assets/images/all-img/card-6.png";
-import { useGetDataMutation } from "../../store/api/app/appSlice";
-import baseurl from "../../constant/baseurl";
-import Loading from "../../components/Loading";
+import cardImage6 from "@/assets/images/all-img/card-6.png";
+import { useGetDataMutation } from "@/store/api/app/appSlice";
+import baseurl from "@/constant/baseurl";
+import Loading from "@/components/Loading";
 
 
 

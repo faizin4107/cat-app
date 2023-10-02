@@ -1,14 +1,11 @@
 import React, { useState, useMemo } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
-// import { useSelector } from "react-redux";
-import Card from "../../components/ui/Card";
-import Icon from "../../components/ui/Icon";
-import Tooltip from "../../components/ui/Tooltip";
-import { useGetDataMutation } from "../../store/api/app/appSlice";
-// import Button from "../../components/ui/Button";
-import baseurl from "../../constant/baseurl";
-import Breadcrumbschild from "../../components/ui/Breadcrumbschild";
-// import { useImageViewer } from 'react-image-viewer-hook'
+import Card from "@/components/ui/Card";
+import Icon from "@/components/ui/Icon";
+import Tooltip from "@/components/ui/Tooltip";
+import { useGetDataMutation } from "@/store/api/app/appSlice";
+import baseurl from "@/constant/baseurl";
+import Breadcrumbschild from "@/components/ui/Breadcrumbschild";
 
 import {
     useTable,
@@ -38,6 +35,7 @@ const COLUMNS = [
                     <span className="inline-flex items-center">
                         <span className="w-12 h-12 rounded-full ltr:mr-3 rtl:ml-3 flex-none bg-slate-600">
                             {row?.cell?.value === '' ? null : (
+                                
                                 <img
                                     src={`${baseurl.imageurl}/${row?.cell?.value}`}
                                     alt=""
@@ -61,9 +59,9 @@ const COLUMNS = [
             return (
                 <div>
                     <span className="inline-flex items-center">
-                        <span className="w-15 h-15 rounded-full ltr:mr-3 rtl:ml-3 flex-none bg-slate-600">
+                        <span className="image-box">
                             {row?.cell?.value === null || row?.cell?.value === '' || row?.cell?.value === 'null' ? null : (
-                                <video class="" id="player" playsinline="playsinline" controls="controls" data-poster="https://vjs.zencdn.net/v/oceans.png">
+                                <video class="w-[130px] h-[60px]" id="player" playsinline="playsinline" controls="controls" data-poster="https://vjs.zencdn.net/v/oceans.png">
                                 <source src={`${baseurl.imageurl}/${row?.cell?.value}`} type="video/mp4" />
                             </video>
                             )}

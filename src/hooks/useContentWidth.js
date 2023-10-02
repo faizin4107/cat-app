@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { handleContentWidth } from "../store/layout";
+import { handleContentWidth } from "@/store/layout";
 
 const useContentWidth = () => {
   const dispatch = useDispatch();

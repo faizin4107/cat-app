@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from "react";
-import { recentOrder } from "../../../constant/table-data";
-import Icon from "../../../components/ui/Icon";
+import React, { useMemo } from "react";
+import { recentOrder } from "@/constant/table-data";
+import Icon from "@/components/ui/Icon";
 
 import {
   useTable,

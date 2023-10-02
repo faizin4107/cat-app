@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { handleDarkMode } from "../store/layout";
+import { handleDarkMode } from "@/store/layout";
 
 const useDarkmode = () => {
   const dispatch = useDispatch();

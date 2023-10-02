@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { handleRtl } from "../store/layout";
+import { handleRtl } from "@/store/layout";
 
 const useRtl = () => {
   const dispatch = useDispatch();

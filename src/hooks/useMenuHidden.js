@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { handleMenuHidden } from "../store/layout";
+import { handleMenuHidden } from "@/store/layout";
 
 const useMenuHidden = () => {
   const dispatch = useDispatch();

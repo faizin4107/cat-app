@@ -1,30 +1,24 @@
 import React, { useState, useEffect, useRef } from "react";
-import Card from "../../../components/ui/Card";
+import Card from "@/components/ui/Card";
 import { useDispatch, useSelector } from "react-redux";
-import HomeBredCurbs from "../HomeBredCurbs";
-import Radio from "../../../components/ui/Radio";
+import Radio from "@/components/ui/Radio";
 import clsx from "clsx";
-import Button from "../../../components/ui/Button";
-import Icon from "../../../components/ui/Icon";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { addSoal, updateListSoal, getSoal } from "../../../store/api/app/soalSlice";
-import { nextNomorSoal, prevNomorSoal, changeMinutes } from "../../../store/api/app/incrementSoal";
-import { useGetDataMutation } from "../../../store/api/app/appSlice";
-import baseurl from "../../../constant/baseurl";
+import Button from "@/components/ui/Button";
+import Icon from "@/components/ui/Icon";
+import { useLocation, useNavigate } from "react-router-dom";
+import { updateListSoal, getSoal } from "@/store/api/app/soalSlice";
+import { nextNomorSoal, prevNomorSoal, changeMinutes } from "@/store/api/app/incrementSoal";
+import { useGetDataMutation } from "@/store/api/app/appSlice";
+import baseurl from "@/constant/baseurl";
 import { toast } from "react-toastify";
-import { confirmTesDone } from "../../../pages/components/confirm-tes-done";
-import { confirmTesCancel } from "../../../pages/components/confirm-tes-cancel";
-import axios from 'axios';
+import { confirmTesCancel } from "@/pages/components/confirm-tes-cancel";
+// import axios from 'axios';
 import Swal from "sweetalert2";
-import { getTokenFromLocalStorage } from "../../../store/localStorage";
-import { useImageViewer } from 'react-image-viewer-hook'
-import Countdown from "react-countdown";
-// import { set } from "react-hook-form";
-// import { useTimer } from 'react-timer-hook';
+import { getTokenFromLocalStorage } from "@/store/localStorage";
+import { useImageViewer } from 'react-image-viewer-hook';
 import { useTimer } from 'react-timer-hook';
-
-import { useTimer as timer } from 'react-timer-hook';
 import { useParams } from "react-router-dom";
+import { useCreateDataMutation } from "@/store/api/app/appSlice";
 const STATUS = {
     STARTED: 'Started',
     STOPPED: 'Stopped',
@@ -35,6 +29,7 @@ const Soal = () => {
 
     const navigate = useNavigate();
     const { getOnClick, ImageViewer } = useImageViewer();
+    const [createData, { isLoading, isError, error, isSuccess }] = useCreateDataMutation();
     // window.addEventListener("beforeunload", (event) => {
     //     event.preventDefault();
     //     console.log("page is fully loaded");
@@ -330,31 +325,21 @@ const Soal = () => {
             allowOutsideClick: name === 'done' ? true : false
         }).then(async result => {
             if (result.value) {
-                // console.log('data', data)
-                const response = await axios.post(`${baseurl.apiUrl}/hasil-tes`, data, {
-                    headers: {
-                        "Authorization": `Bearer ${getTokenFromLocalStorage()}`,
-                    },
-                }).then(
-                    result => {
-                        console.log('result', result)
-                        return result;
-                    },
-                    err => {
-                        console.log('err', err)
-                        return err;
-                    },
-                );
+                const response = await createData({ path: '/input-tes', post: data });
+                console.log('response upload nilai', response);
                 if (response.error) {
-                    Swal.fire('Dihapus!', 'Data gagal dikirim.', 'error');
+                    console.log('1');
+                    toast.error('Terjadi kesalahan');
+                    // throw new Error(response.error.message);
                     return;
                 }
-
 
                 if (response.data.error) {
                     console.log('2');
                     throw new Error('Terjadi kesalahan');
                 }
+
+
                 differenceTime(storedUser.name,
 
                 );
@@ -384,6 +369,7 @@ const Soal = () => {
         }
         let newHour = 0;
         let newMinutes = 0;
+        let timeProps = propsData[0].waktu_pengerjaan;
         if (parseInt(propsData[0].waktu_pengerjaan) > 60) {
             newHour = (parseInt(propsData[0].waktu_pengerjaan) / 60) - 1;
             newMinutes = 59;
@@ -391,7 +377,7 @@ const Soal = () => {
             newHour = hour;
             newMinutes = timeProps;
         }
-        let timeProps = propsData[0].waktu_pengerjaan;
+
         let myDate1 = day + "/" + month + "/" + year + " " + newHour.toString() + ":" + newMinutes.toString() + ":" + "59";
         let myDate2 = day + "/" + month + "/" + year + " " + newHour.toString() + ":" + runMinutes.toString() + ":" + runSeconds.toString();
         console.log('myDate1', myDate1);
@@ -467,7 +453,7 @@ const Soal = () => {
         // const listSoal = useSelector((state) => state.soal);
         if (step === 'next') {
             for (var i = 0; i < items.length; i++) {
-                if (items[i]['nomor'] === (nomorSoal + 1)) {
+                if (parseInt(items[i]['nomor']) === (nomorSoal + 1)) {
                     console.log('state', items[i])
                     //   data = state.items[i];
                     // console.log('data', data)
@@ -478,7 +464,7 @@ const Soal = () => {
             }
         } else {
             for (var i = 0; i < items.length; i++) {
-                if (items[i]['nomor'] === (nomorSoal - 1)) {
+                if (parseInt(items[i]['nomor']) === (nomorSoal - 1)) {
                     console.log('state', items[i])
                     //   data = state.items[i];
                     // console.log('data', data)
@@ -661,7 +647,7 @@ const Soal = () => {
                                                     null
                                                 ) : (
                                                     <>
-                                                        <video class="h-[170px] w-[250px]" id="player" playsinline="playsinline" controls="controls" data-poster="https://vjs.zencdn.net/v/oceans.png">
+                                                        <video className="h-[170px] w-[250px]" id="player" controls="controls" data-poster="https://vjs.zencdn.net/v/oceans.png">
                                                             <source src={`${baseurl.imageurl}/${item.video}`} type="video/mp4" />
                                                         </video>
 

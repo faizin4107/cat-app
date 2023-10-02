@@ -1,13 +1,10 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-// import { advancedTable } from "../../../constant/table-data";
-import { useSelector } from "react-redux";
-import Card from "../../components/ui/Card";
-import Icon from "../../components/ui/Icon";
-import Tooltip from "../../components/ui/Tooltip";
-import { useGetDataMutation } from "../../store/api/app/appSlice";
-import Button from "../../components/ui/Button";
-import Breadcrumbschild from "../../components/ui/Breadcrumbschild";
+import Card from "@/components/ui/Card";
+import Icon from "@/components/ui/Icon";
+import Tooltip from "@/components/ui/Tooltip";
+import { useGetDataMutation } from "@/store/api/app/appSlice";
+import Breadcrumbschild from "@/components/ui/Breadcrumbschild";
 
 import {
   useTable,

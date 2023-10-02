@@ -1,8 +1,8 @@
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 
-import Usa from "../../../../assets/images/flags/usa.png";
-import Gn from "../../../../assets/images/flags/gn.png";
+import Usa from "@/assets/images/flags/usa.png";
+import Gn from "@/assets/images/flags/gn.png";
 const months = [
   { name: "En", image: Usa },
   { name: "Gn", image: Gn },

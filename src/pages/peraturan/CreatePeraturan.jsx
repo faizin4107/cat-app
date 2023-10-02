@@ -1,19 +1,14 @@
 import React from "react";
-import Textinput from "../../components/ui/Textinput";
-import Fileinput from "../../components/ui/Fileinput";
 import { useForm } from "react-hook-form";
-import Select from "react-select";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Card from "../../components/ui/Card";
+import Card from "@/components/ui/Card";
 import * as yup from "yup";
-import Breadcrumbschild from "../../components/ui/Breadcrumbschild";
-import { useCreateDataMutation } from "../../store/api/app/appSlice";
-import { useState, useRef } from "react";
+import Breadcrumbschild from "@/components/ui/Breadcrumbschild";
+import { useCreateDataMutation } from "@/store/api/app/appSlice";
+import { useState } from "react";
 import { toast } from "react-toastify";
-import Button from "../../components/ui/Button";
-import Flatpickr from "react-flatpickr";
-import { useEffect } from "react";
+import Button from "@/components/ui/Button";
 
 const FormValidationSchema = yup
     .object({

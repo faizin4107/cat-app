@@ -1,19 +1,13 @@
 import React from "react";
 import axios from 'axios';
-import Fileinput from "../../components/ui/Fileinput";
-import { getTokenFromLocalStorage } from "../../store/localStorage";
-import Select from "react-select";
+import { getTokenFromLocalStorage } from "@/store/localStorage";
 import { useNavigate, useLocation } from "react-router-dom";
-import Card from "../../components/ui/Card";
-import Breadcrumbschild from "../../components/ui/Breadcrumbschild";
-// import { useEditKelolaSesiMutation } from "../../store/api/app/kelolaSesiSlice";
+import Card from "@/components/ui/Card";
+import Breadcrumbschild from "@/components/ui/Breadcrumbschild";
 import { useState } from "react";
-import ValidateFile from "../utility/ValidateFile";
 import { toast } from "react-toastify";
-import baseurl from "../../constant/baseurl";
-import Button from "../../components/ui/Button";
-import { useEffect } from "react";
-
+import baseurl from "@/constant/baseurl";
+import Button from "@/components/ui/Button";
 
 
 const EditPilihanJawaban = (props) => {

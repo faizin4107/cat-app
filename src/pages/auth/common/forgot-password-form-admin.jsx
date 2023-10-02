@@ -1,15 +1,13 @@
 import React from "react";
-import Textinput from "../../../components/ui/Textinput";
+import Textinput from "@/components/ui/Textinput";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
-import Button from "../../../components/ui/Button";
-// import { Link } from "react-router-dom";
-// import { useSelector, useDispatch } from "react-redux";
-import { useCheckEmailMutation } from "../../../store/api/auth/authApiSlice";
-// import { setUser } from "../../../store/api/auth/authSlice";
+import Button from "@/components/ui/Button";
+import { useCheckEmailMutation } from "@/store/api/auth/authApiSlice";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
 const schema = yup
   .object({
     email: yup.string().email("Invalid email").required("Email is Required")
@@ -37,7 +35,7 @@ const ForgotPasswordFormAdmin = () => {
 
     try {
       const response = await checkEmail(data);
-      // console.log('response check email', response);
+      console.log('response check email', response);
       if (response.error) {
         // console.log('1');
         toast.error(response.error.data.message);
@@ -63,6 +61,7 @@ const ForgotPasswordFormAdmin = () => {
             state: datauser
         });
       } else {
+        console.log('email')
         toast.error('Email tidak terdaftar');
         return;
       }

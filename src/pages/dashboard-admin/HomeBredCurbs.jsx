@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import Icon from "@/components/ui/Icon";
-// import dayjs from "dayjs";
 import Datepicker from "react-tailwindcss-datepicker";
 const HomeBredCurbs = ({ title }) => {
   const [value, setValue] = useState({

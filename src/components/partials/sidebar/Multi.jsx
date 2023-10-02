@@ -1,4 +1,4 @@
-import Badge from "../../../components/ui/Badge";
+import Badge from "@/components/ui/Badge";
 import React from "react";
 import { Collapse } from "react-collapse";
 import { NavLink } from "react-router-dom";

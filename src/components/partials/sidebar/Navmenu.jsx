@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
-// import { Collapse } from "react-collapse";
-import Icon from "../../../components/ui/Icon";
+import Icon from "@/components/ui/Icon";
 import { useDispatch } from "react-redux";
-import useMobileMenu from "../../../hooks/useMobileMenu";
+import useMobileMenu from "@/hooks/useMobileMenu";
 import Submenu from "./Submenu";
-import { useLogoutMutation } from "../../../store/api/auth/authApiSlice";
-import { logOut } from "../../../store/api/auth/authSlice";
+import { useLogoutMutation } from "@/store/api/auth/authApiSlice";
+import { logOut } from "@/store/api/auth/authSlice";
 
 const Navmenu = ({ menus }) => {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
@@ -77,10 +76,6 @@ const Navmenu = ({ menus }) => {
   }, [location]);
 
   const handleLogout = async () => {
-    // Clear user data from local storage
-    console.log('yes')
-  
-  // const dispatch = useDispatch();
     try {
       const userData = JSON.parse(localStorage.getItem("user"));
       if(userData != null){
@@ -91,7 +86,6 @@ const Navmenu = ({ menus }) => {
           }
           const response = await logout(data, userData.accessToken);
           if (response.error) {
-            console.log('1');
             if(response.error.data.message != 'Session expired'){
               toast.error(response.error.data.message);
               return;
@@ -105,7 +99,6 @@ const Navmenu = ({ menus }) => {
           }
           const response = await logout(data, userData.accessToken);
           if (response.error) {
-            console.log('1');
             if(response.error.data.message != 'Session expired'){
               toast.error(response.error.data.message);
               return;
@@ -114,9 +107,6 @@ const Navmenu = ({ menus }) => {
           }
         }
       }
-      
-      console.log('tes', userData)
-      // localStorage.removeItem("user");
       dispatch(logOut());
       
       

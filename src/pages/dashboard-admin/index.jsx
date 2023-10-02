@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../components/ui/Card";
-import Icon from "../../components/ui/Icon";
+import Card from "@/components/ui/Card";
+import Icon from "@/components/ui/Icon";
 import HomeBredCurbs from "./HomeBredCurbs";
-import { useGetDataMutation } from "../../store/api/app/appSlice";
-import Loading from "../../components/Loading";
+import { useGetDataMutation } from "@/store/api/app/appSlice";
+import Loading from "@/components/Loading";
 
 
 const DashboardAdmin = () => {

@@ -1,16 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import axios from 'axios';
-import { getTokenFromLocalStorage } from "../../../store/localStorage";
-import Select from "react-select";
+import { getTokenFromLocalStorage } from "@/store/localStorage";
 import { useNavigate, useLocation } from "react-router-dom";
-import Card from "../../../components/ui/Card";
-import Breadcrumbschild from "../../../components/ui/Breadcrumbschild";
-import { useGetDataMutation } from "../../../store/api/app/appSlice";
-// import { useState } from "react";
+import Card from "@/components/ui/Card";
+import Breadcrumbschild from "@/components/ui/Breadcrumbschild";
+import { useGetDataMutation } from "@/store/api/app/appSlice";
 import { toast } from "react-toastify";
-import baseurl from "../../../constant/baseurl";
-import Button from "../../../components/ui/Button";
-// import Textarea from "../../components/ui/Textarea";
+import baseurl from "@/constant/baseurl";
+import Button from "@/components/ui/Button";
 
 
 

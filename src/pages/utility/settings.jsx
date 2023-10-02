@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "../../components/ui/Card";
-import Icon from "../../components/ui/Icon";
+import Card from "@/components/ui/Card";
+import Icon from "@/components/ui/Icon";
 import { Link } from "react-router-dom";
 
 const settings = () => {

@@ -1,32 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../../components/ui/Card";
-// import Card from "@/components/ui/Card";
-// import Icon from "../../../components/ui/Icon";
-// import ImageBlock1 from "../../components/partials/widget/block/image-block-1";
-// import SelectMonth from "../../components/partials/SelectMonth";
-// import CompanyTable from "../../components/partials/Table/company-table";
-// import RecentActivity from "../../components/partials/widget/recent-activity";
-// import MostSales from "../../components/partials/widget/most-sales";
+import Card from "@/components/ui/Card";
 import HomeBredCurbs from "../HomeBredCurbs";
-import Breadcrumbschild from "../../../components/ui/Breadcrumbschild";
+import Breadcrumbschild from "@/components/ui/Breadcrumbschild";
 import clsx from "clsx";
-// import ImageBlock2 from "../../components/partials/widget/block/image-block-2";
-// import React from "react";
-// import Card from "@/components/ui/Card";
-import Button from "../../../components/ui/Button";
-// import Icon from "@/components/ui/Icon";
-import Icon from "../../../components/ui/Icon";
-// import Icon from "@/components/ui/Icon";
+import Icon from "@/components/ui/Icon";
 import { Link, useLocation } from "react-router-dom";
-
-// import images
-import cardImage6 from "../../../assets/images/all-img/card-6.png";
-// import StepBox from "@/components/partials/ecommerce/steps/step-box";
-// import StepBox from "../../../components/partials/ecommerce/steps/step-box";
-import { useGetDataMutation } from "../../../store/api/app/appSlice";
+import { useGetDataMutation } from "@/store/api/app/appSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Loading from "../../../components/Loading";
+import Loading from "@/components/Loading";
 
 
 const PilihSesi = () => {

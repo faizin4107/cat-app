@@ -31,7 +31,7 @@ const soalSlice = createSlice({
       // console.log('nomor', nomor)
       
       for (var i = 0; i < state.items.length; i++) {
-        if (state.items[i]['nomor'] === nomor) {
+        if (parseInt(state.items[i]['nomor']) === nomor) {
           
           data = state.items[i];
           console.log('data', data)
@@ -54,7 +54,7 @@ const soalSlice = createSlice({
       let data = {};
       let data2 = {};
       for (var i = 0; i < state.items.length; i++) {
-        if (state.items[i]['nomor'] === nomor) {
+        if (parseInt(state.items[i]['nomor']) === nomor) {
           console.log('item', state.items[i])
           // data = { ...state.items, jawaban_user: jawaban, keterangan: keterangan }
           data = state.items[i];

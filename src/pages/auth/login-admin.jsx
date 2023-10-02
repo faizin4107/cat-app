@@ -1,16 +1,8 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import LoginFormAdmin from "./common/login-form-admin";
-// import Social from "./common/social";
-import useDarkMode from "../../hooks/useDarkMode";
-
-// image import
-// import LogoWhite from "../../assets/images/logo/logo-white.svg";
-// import Logo from "../../assets/images/logo/logo.svg";
-import Illustration from "../../assets/images/logo-bg.jpeg";
+import Illustration from "@/assets/images/logo-bg.jpeg";
 
 const loginAdmin = () => {
-  const [isDark] = useDarkMode();
   return (
     <div className="loginwrapper">
       <div className="lg-inner-column">

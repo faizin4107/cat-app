@@ -1,11 +1,10 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import Card from "../../../components/ui/Card";
-import Icon from "../../../components/ui/Icon";
-import Tooltip from "../../../components/ui/Tooltip";
-import { useGetDataMutation } from "../../../store/api/app/appSlice";
-import Button from "../../../components/ui/Button";
+import Card from "@/components/ui/Card";
+import Icon from "@/components/ui/Icon";
+import Tooltip from "@/components/ui/Tooltip";
+import { useGetDataMutation } from "@/store/api/app/appSlice";
+import Button from "@/components/ui/Button";
 
 import {
     useTable,
@@ -14,12 +13,9 @@ import {
     useGlobalFilter,
     usePagination,
 } from "react-table";
-// import GlobalFilter from "../GlobalFilter";
 import { useEffect } from "react";
-// import { editKelolaTest } from "./store";
-// import baseurl from "../../constant/baseurl";
 import { handleDelete } from "../../components/delete-data";
-import Loading from "../../../components/Loading";
+import Loading from "@/components/Loading";
 
 const COLUMNS = [
     {

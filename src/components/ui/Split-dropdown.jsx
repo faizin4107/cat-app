@@ -1,7 +1,7 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
-import Icon from "../../components/ui/Icon";
+import Icon from "@/components/ui/Icon";
 
 const SplitDropdown = ({
   label = "Dropdown",

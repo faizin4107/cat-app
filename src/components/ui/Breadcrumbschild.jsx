@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-// import { menuItems } from "../../constant/data";
 import Icon from "../ui/Icon";
 
 const Breadcrumbschild = ({ menu }) => {
-  //   const [menu, setMenu] = useState();
-  //     useEffect(() => {
-  //         console.log('props', props)
-  //         setMenu(props)
-  //     },[menu])
-  // console.log('menu', menu)
   const [role, setRole] = useState();
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user"));
