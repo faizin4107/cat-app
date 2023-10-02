@@ -327,7 +327,7 @@ const Soal = () => {
                     'nilai': 0
                 }
                 console.log('data', data);
-                const response = await createData({ path: '/input-tes', post: data });
+                const response = await createData({ path: '/hasil-tes', post: data });
                 console.log('response upload nilai', response);
                 if (response.error) {
                     console.log('1');
